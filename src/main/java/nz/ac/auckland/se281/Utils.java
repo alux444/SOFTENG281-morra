@@ -7,7 +7,7 @@ import java.util.Scanner;
 // deterministic behaviours (see handout)
 public class Utils {
 
-  public static Random random = new Random();
+  public static Random random = new Random(1);
 
   public static Scanner scanner = new Scanner(System.in);
 
@@ -23,6 +23,7 @@ public class Utils {
     }
     return true; // no exception!
   }
+
   /**
    * @param min
    * @param max
