@@ -20,7 +20,7 @@ public class AiHard extends Ai {
 
   @Override
   public void changeStrategy() {
-    if (game.getRound() > 4) {
+    if (game.getRound() >= 4) {
       this.strategy = new TopStrategy(game);
     }
   }

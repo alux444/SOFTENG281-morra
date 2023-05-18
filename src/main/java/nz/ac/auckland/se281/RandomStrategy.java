@@ -5,7 +5,7 @@ public class RandomStrategy extends Strategy {
   private int currentFingers;
 
   public int selectAiFingers() {
-    int random = super.selectAiFingers();
+    int random = randomFingers();
     this.currentFingers = random;
     return random;
   }

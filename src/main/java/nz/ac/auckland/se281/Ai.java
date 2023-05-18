@@ -1,6 +1,8 @@
 package nz.ac.auckland.se281;
 
 public abstract class Ai {
+  // the ai class with the "setStrategy" option - implementing the strategy design pattern
+
   private Strategy strategy;
 
   public int[] playTurn() {

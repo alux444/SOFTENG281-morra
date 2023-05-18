@@ -71,10 +71,6 @@ public class MorraGame {
     // at the end of game, add human fingers to history
     history.add(inputFingers);
 
-    // at the end of the round, increment. and check with ai if strategy should be changed.
-    incrementRound();
-    currentAi.changeStrategy();
-
     // check if any player has won. return a true if any player has.
     if (playerPoints == pointsToWin) {
       MessageCli.END_GAME.printMessage(playerName, Integer.toString(round));
@@ -83,6 +79,11 @@ public class MorraGame {
       MessageCli.END_GAME.printMessage("Jarvis", Integer.toString(round));
       return true;
     }
+
+    // at the end of the round, if there is no winner yet, increment. and check with ai if strategy
+    // should be changed.
+    incrementRound();
+    currentAi.changeStrategy();
     return false;
   }
 

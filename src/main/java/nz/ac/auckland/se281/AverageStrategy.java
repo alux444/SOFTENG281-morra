@@ -12,7 +12,7 @@ public class AverageStrategy extends Strategy {
   }
 
   public int selectAiFingers() {
-    int random = super.selectAiFingers();
+    int random = randomFingers();
     this.currentFingers = random;
     return random;
   }
@@ -28,10 +28,8 @@ public class AverageStrategy extends Strategy {
     int average = 0;
     for (int number : history) {
       average += number;
-      System.out.println(number);
     }
-    average = Math.round(average / history.size());
-    System.out.println(average);
+    average = Math.round((float) average / history.size());
 
     // add average to the current fingers
     int averageSum = currentFingers + average;

@@ -12,7 +12,7 @@ public class TopStrategy extends Strategy {
   }
 
   public int selectAiFingers() {
-    int random = super.selectAiFingers();
+    int random = randomFingers();
     this.currentFingers = random;
     return random;
   }
@@ -34,9 +34,9 @@ public class TopStrategy extends Strategy {
 
     // look for most frequently occurring number
     int max = 0;
-    for (int number : counts) {
-      if (number > max) {
-        max = number;
+    for (int i = 0; i < 5; i++) {
+      if (counts[i] > max) {
+        max = i + 1;
       }
     }
 
