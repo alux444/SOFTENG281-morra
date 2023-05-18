@@ -14,8 +14,28 @@ public class Morra {
   }
 
   public void play() {
-    currentGame.playRound();
+    if (this.checkForGame()) {
+      boolean gameFinished = currentGame.playRound();
+      if (gameFinished) {
+        this.currentGame = null;
+      }
+    } else {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+    }
   }
 
-  public void showStats() {}
+  public void showStats() {
+    if (this.checkForGame()) {
+      currentGame.showStats();
+    } else {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+    }
+  }
+
+  public boolean checkForGame() {
+    if (currentGame == null) {
+      return false;
+    }
+    return true;
+  }
 }
