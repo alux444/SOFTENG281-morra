@@ -8,6 +8,7 @@ public class AiMaster extends Ai {
   private Strategy average;
   private Strategy top;
 
+  // master ai starts off with random strategy
   public AiMaster(MorraGame game) {
     this.random = new RandomStrategy();
     this.average = new AverageStrategy(game);
@@ -24,6 +25,8 @@ public class AiMaster extends Ai {
     return choices;
   }
 
+  // at round 4, we will switch to average strategy.
+  // otherwise, if strategies are instance of top or average after round 4, swap strategy
   @Override
   public void changeStrategy() {
     if (game.getRound() == 4) {

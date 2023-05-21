@@ -104,8 +104,11 @@ public class MorraGame {
 
   // method which checks results and prints results.
   private void checkResult(int human, int ai, int total) {
+    // if the inputs are equal, return a draw.
+    // otherwise, if either ai or human wins, return the respective winner
     if (human == ai) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("DRAW");
+
     } else if (human == total) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("HUMAN_WINS");
       this.playerPoints++;
@@ -113,6 +116,7 @@ public class MorraGame {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("AI_WINS");
       this.aiPoints++;
     } else {
+      // otherwise return a draw, as there was no winner.
       MessageCli.PRINT_OUTCOME_ROUND.printMessage("DRAW");
     }
   }

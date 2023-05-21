@@ -4,7 +4,7 @@ import nz.ac.auckland.se281.Main.Difficulty;
 
 public class Morra {
 
-  MorraGame currentGame;
+  private MorraGame currentGame;
 
   public Morra() {}
 

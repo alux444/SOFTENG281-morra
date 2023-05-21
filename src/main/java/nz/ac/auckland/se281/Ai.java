@@ -5,16 +5,14 @@ public abstract class Ai {
 
   private Strategy strategy;
 
-  public int[] playTurn() {
-    int[] choices = new int[2];
-    choices[0] = strategy.selectAiFingers();
-    choices[1] = strategy.selectAiSum();
-    return choices;
-  }
-
+  // set strategy to change strategy
   public void setStrategy(Strategy strategy) {
     this.strategy = strategy;
   }
 
+  // abstract method for playing turn
+  public abstract int[] playTurn();
+
+  // abstract method for changing strategy
   public abstract void changeStrategy();
 }

@@ -4,6 +4,7 @@ public class AiEasy extends Ai {
 
   private Strategy strategy;
 
+  // as easy ai only ever uses random strategy, simply assign strategy as random strategy
   public AiEasy() {
     this.strategy = new RandomStrategy();
   }
