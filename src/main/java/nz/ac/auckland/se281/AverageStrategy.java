@@ -4,17 +4,10 @@ import java.util.List;
 
 public class AverageStrategy extends Strategy {
 
-  private int currentFingers;
   private MorraGame currentGame;
 
   public AverageStrategy(MorraGame game) {
     this.currentGame = game;
-  }
-
-  public int selectAiFingers() {
-    int random = randomFingers();
-    this.currentFingers = random;
-    return random;
   }
 
   @Override
