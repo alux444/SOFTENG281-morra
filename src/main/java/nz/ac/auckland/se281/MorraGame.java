@@ -41,6 +41,13 @@ public class MorraGame {
     // get inputs through scanner, splits each input into an array for inputs
     String[] inputs = (Utils.scanner.nextLine()).split(" ");
 
+    // if the input is non integer, return the error message and ask again
+    while (!Utils.isInteger(inputs[0]) || !Utils.isInteger(inputs[1])) {
+      MessageCli.INVALID_INPUT.printMessage();
+      MessageCli.ASK_INPUT.printMessage();
+      inputs = (Utils.scanner.nextLine()).split(" ");
+    }
+
     // first convert strings to an integer
     int inputFingers = Integer.parseInt(inputs[0]);
     int inputSum = Integer.parseInt(inputs[1]);
