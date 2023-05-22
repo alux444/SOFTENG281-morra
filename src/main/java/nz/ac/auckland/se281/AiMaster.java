@@ -19,9 +19,9 @@ public class AiMaster extends Ai {
   @Override
   public void changeStrategy() {
     if (game.getRound() == 4) {
-      this.strategy = new AverageStrategy(game);
+      setStrategy(new AverageStrategy(game));
     } else if (game.getRound() > 4) {
-      this.strategy = (this.strategy instanceof TopStrategy) ? average : top;
+      setStrategy((this.strategy instanceof TopStrategy) ? average : top);
     }
   }
 }

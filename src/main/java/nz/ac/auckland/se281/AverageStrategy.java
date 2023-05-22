@@ -22,6 +22,8 @@ public class AverageStrategy extends Strategy {
     for (int number : history) {
       average += number;
     }
+
+    // calculate average rounded.
     average = Math.round((float) average / history.size());
 
     // add average to the current fingers

@@ -14,7 +14,7 @@ public class AiMedium extends Ai {
   @Override
   public void changeStrategy() {
     if (game.getRound() >= 4) {
-      this.strategy = this.average;
+      setStrategy(average);
     }
   }
 }

@@ -25,14 +25,20 @@ public class TopStrategy extends Strategy {
       counts[number - 1]++;
     }
 
-    // look for most frequently occurring number
-    int max = 0;
+    // look for most frequently occurring number. as it is irrelevant which finger is choosed if
+    // there is a tie, this loop results in choosing the higher more frequently occurring one
+    int maxCount = 0;
+    int maxVal = 0;
+
     for (int i = 0; i < 5; i++) {
-      if (counts[i] > max) {
-        max = i + 1;
+      if (counts[i] > maxCount) {
+        maxVal = i + 1;
+        maxCount = counts[i];
       }
     }
 
-    return currentFingers + max;
+    System.out.println("MAX" + maxVal);
+
+    return currentFingers + maxVal;
   }
 }
